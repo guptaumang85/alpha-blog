@@ -1,3 +1,7 @@
 <h1>Show articles</h1>
 <p><strong>Name: </strong><%= @article.name %></p>
 <p><strong>Description: </strong><%= @article.description %></p>
+<p>
+  <%= link_to "Edit", edit_article_path(@article) %> | 
+  <%= link_to "Return to article listings", articles_path %>
+</p>
