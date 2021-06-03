@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Bangers|Cinzel:400,700,900|Lato:100,300,400,700,900|Lobster|Lora:400,700|Mansalva|Muli:200,300,400,600,700,800,900|Open+Sans:300,400,600,700,800|Oswald:200,300,400,500,600,700|Roboto:100,300,400,500,700,900&display=swap');
+.navbar {
+  background-color: #0c0c0c !important;
+  color: white;
+}
+
+.nav-link {
+  color: white !important;
+}
+
+#logo {
+  color: white;
+  font-weight: 300;
+  font-size: 35px;
+  line-height: 0.6;
+  font-family: 'Bangers', cursive;
+  letter-spacing: 1px;
+}
+
+.jumbotron {
+  padding: 17rem 10rem;
+  background-color: var(--bs-light);
+  border-radius: .3rem;
+  background-image: url('retrosupply-unsplash.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

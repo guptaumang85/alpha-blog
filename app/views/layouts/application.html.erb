@@ -11,9 +11,9 @@
   </head>
 
   <body>
-    <% flash.each do |key, msg| %>
-      <%= msg %>
-    <% end %>
+    <%= render 'layouts/navigation' %>
+    <%= render 'layouts/flash_messages' %>
     <%= yield %>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
