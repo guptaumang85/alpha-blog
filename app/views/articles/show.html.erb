@@ -1,7 +1,15 @@
-<h1>Show articles</h1>
-<p><strong>Name: </strong><%= @article.name %></p>
-<p><strong>Description: </strong><%= @article.description %></p>
-<p>
-  <%= link_to "Edit", edit_article_path(@article) %> | 
-  <%= link_to "Return to article listings", articles_path %>
-</p>
+<div class="p-3 mb-2">
+  <h1 class="text-center mt-4"><%= @article.name %></h1>
+  <div class="container w-50">
+    <div class="card text-center mt-5 shadow bg-body rounded">
+      <div class="card-header fst-italic">
+        by Umang Gupta
+      </div>
+      <div class="card-body">
+        <div class="card-text text-left"><%= simple_format(@article.description) %></div>
+        <%= link_to "Edit", edit_article_path(@article), class: 'btn btn-warning' %>
+        <%= link_to "Delete", article_path(@article), class: 'btn btn-danger', method: :delete %>
+      </div>
+    </div>
+  </div>
+</div>

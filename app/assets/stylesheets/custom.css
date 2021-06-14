@@ -26,3 +26,16 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+#page-content {
+  flex: 1 0 auto;
+  background-color: #f8f9fa !important;
+  width: 100% !important; 
+  height: 100% !important;
+  left: 0 !important;
+  top: 0 !important;
+}
+
+footer {
+  flex-shrink: none !important;
+}

@@ -1,19 +1,23 @@
-<% if @article.errors.any? %>
-  <h2>The following errors prevented the article from being saved</h2>
-  <% @article.errors.full_messages.each do |msg| %>
-    <ul>
-      <li><%= msg %></li>
-    </ul>
-  <% end%>
-<% end %>
-<%= form_with(model: @article, local: true) do |f| %>
-  <p>
-    <%= f.label :name %></br>
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :description %></br>
-    <%= f.text_area :description %>
-  </p>
-  <%= f.submit %>
-<% end %>
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <div class="col-10 p-0">  
+      <%= render 'shared/errors' %>
+    </div>
+    <div class="col-10 shadow-lg p-3 mb-5 mt-3 rounded bg-info">
+      <%= form_with(model: @article, local: true) do |f| %>
+        <div class="mb-3">
+          <%= f.label :name, class: 'form-label text-light' %>
+          <%= f.text_field :name, class: 'form-control' %>
+        </div>
+        <div class="mb-3">
+          <%= f.label :description, class: 'form-label text-light' %>
+          <%= f.text_area :description, rows: 10, class: 'form-control' %>
+        </div>
+        <%= f.submit class: 'btn btn-outline-light btn-lg' %>
+      <% end %>
+    </div>
+    <p>
+      <%= link_to "[ Cancel and return to article listings ]", articles_path, class: 'd-flex justify-content-center' %>
+    </p>
+  </div>
+</div>
