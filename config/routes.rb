@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   root 'pages#home'
   get 'about', to: 'pages#about'
   get 'caraousel', to: 'pages#caraousel'
+  get 'signup', to: 'users#new'
   resources :articles
+  resources :users
 end

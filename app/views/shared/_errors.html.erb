@@ -1,7 +1,7 @@
-<% if @article.errors.any? %>
+<% if resource.errors.any? %>
   <div class="alert alert-danger alert-dismissible fade show" role="alert">
-    <h4 class="alert-heading">The following errors prevented the article from being saved</h4>
-    <% @article.errors.full_messages.each do |msg| %>
+    <h4 class="alert-heading">The following errors prevented the <%= resource.class.name.downcase %> from being saved</h4>
+    <% resource.errors.full_messages.each do |msg| %>
       <ul>
         <li><%= msg %></li>
       </ul>
