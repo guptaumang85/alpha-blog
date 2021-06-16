@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update]
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :require_user, :require_same_user, only: [:edit, :update, :destroy]
+
+  def index
+    @users = User.all
+  end
 
   def new
     @user = User.new
@@ -32,8 +36,11 @@ class UsersController < ApplicationController
     @articles = @user.articles
   end
 
-  def index
-    @users = User.all
+  def destroy
+    @user.destroy
+    session[:user_id] = nil
+    flash[:success] = "User and all associated articles successfully deleted."
+    redirect_to articles_path
   end
 
   private

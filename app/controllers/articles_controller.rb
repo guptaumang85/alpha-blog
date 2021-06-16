@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_action :require_user, except: [:show, :index]
   before_action :require_same_user, only: [:edit, :update, :destroy]
+  
   def index
     @articles = Article.all
   end
@@ -14,7 +15,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
     @article.user = current_user
     if @article.save
-      flash[:notice] = "Article saved successfully."
+      flash[:success] = "Article saved successfully."
       redirect_to @article
     else
       render :new
@@ -29,7 +30,7 @@ class ArticlesController < ApplicationController
 
   def update
     if @article.update(article_params)
-      flash[:notice] = 'Article updated successfully.'
+      flash[:success] = 'Article updated successfully.'
       redirect_to @article
     else
       render :edit
@@ -38,7 +39,7 @@ class ArticlesController < ApplicationController
 
   def destroy
     if @article.destroy
-      flash[:notice] = "Article destroyed successfully."
+      flash[:success] = "Article destroyed successfully."
     end
     redirect_to articles_path
   end
