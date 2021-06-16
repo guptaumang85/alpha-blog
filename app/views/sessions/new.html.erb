@@ -1,0 +1,26 @@
+<div class="p-3 mb-2">
+  <h1 class="text-center mt-4">Login page</h1>
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      <div class="col-10 p-0">  
+        <%#= render 'shared/errors', resource: @user %>
+      </div>
+      <div class="col-10 shadow-lg p-3 mb-5 mt-3 rounded bg-info">
+        <%= form_with(scope: :session, url: login_path, local: true) do |f| %>
+          <div class="mb-3">
+            <%= f.label :email, class: 'form-label text-light' %>
+            <%= f.text_field :email, class: 'form-control', placeholder: 'Enter your email' %>
+          </div>
+          <div class="mb-3">
+            <%= f.label :password, class: 'form-label text-light' %>
+            <%= f.password_field :password, class: 'form-control', placeholder: 'Enter password' %>
+          </div>
+          <%= f.submit "Log in", class: 'btn btn-outline-light btn-lg' %>
+        <% end %>
+      </div>
+      <p>
+        <%= link_to "[ Cancel and return to article listings ]", articles_path, class: 'd-flex justify-content-center' %>
+      </p>
+    </div>
+  </div>
+</div>

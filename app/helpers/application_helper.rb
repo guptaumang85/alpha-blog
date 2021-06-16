@@ -7,4 +7,5 @@ module ApplicationHelper
     image_tag("https://www.gravatar.com/avatar/#{hash}?s=#{size}",
               alt: user.name, class: 'rounded mx-auto d-block mt-3')
   end
+
 end
