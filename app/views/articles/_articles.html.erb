@@ -3,6 +3,7 @@
     <div class="card text-center mt-4 shadow bg-body rounded">
       <div class="card-header fst-italic">
         by <%= link_to article.user.username, user_path(article.user)  if article.user %>
+        <div class="mt-1"><%= render article.categories %></div>
       </div>
       <div class="card-body">
         <h5 class="card-title"><%= link_to article.name, article_path(article) %></h5>
